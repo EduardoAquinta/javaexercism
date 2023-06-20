@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 class BirdWatcher {
     private final int[] birdsPerDay;
@@ -7,23 +8,40 @@ class BirdWatcher {
     }
 
     public int[] getLastWeek() {
-        throw new UnsupportedOperationException("Please implement the BirdCount.getLastWeek() method");
+        return birdsPerDay;
     }
 
     public int getToday() {
-        throw new UnsupportedOperationException("Please implement the BirdCount.getToday() method");
+        int lastElement = birdsPerDay.length -1;
+        int today = birdsPerDay[lastElement];
+        return today;
     }
 
     public void incrementTodaysCount() {
-        throw new UnsupportedOperationException("Please implement the BirdCount.incrementTodaysCount() method");
-    }
+        int lastElement = birdsPerDay.length -1;
+        int today = birdsPerDay[lastElement];
+        int todayPlusOne = today + 1;
+        birdsPerDay[lastElement] = todayPlusOne;
+        }
 
     public boolean hasDayWithoutBirds() {
-        throw new UnsupportedOperationException("Please implement the BirdCount.hasDayWithoutBirds() method");
+        boolean truth = false;
+        for (int j : birdsPerDay) {
+            if (j == 0) {
+                truth = true;
+                break;
+            }
+        }
+        return truth;
     }
 
     public int getCountForFirstDays(int numberOfDays) {
-        throw new UnsupportedOperationException("Please implement the BirdCount.getCountForFirstDays() method");
+        int total = 0;
+
+        for(int i = 0; i <= numberOfDays; i++) {
+            total += i;
+        }
+        return total;
     }
 
     public int getBusyDays() {
